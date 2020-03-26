@@ -6,4 +6,13 @@ const setCity = (data)=>{
 }
 
 
-export {setCity}
+const setDestination = (data)=>{
+    return{
+        type:'SETDESTINATION',
+        data:data
+    }
+}
+
+
+
+export {setCity,setDestination}
