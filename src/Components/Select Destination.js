@@ -27,13 +27,17 @@ export default function SelectDestination() {
         if (event.target.checked) {
             select.push(v)
             setSelected(select)
-            dispatch(setDestination(select))
         }
         else {
             setSelected(select.filter(item => item.name !== v.name))
-            dispatch(setDestination(select.filter(item => item.name !== v.name)))
         }
     };
+
+    const handleSaveDestinations=()=>{
+        var destination = selected
+        destination.unshift(hotels[city])
+        dispatch(setDestination(destination))
+    }
 
     console.log(selected, "selected")
 
@@ -54,6 +58,12 @@ export default function SelectDestination() {
             { name: "St. Stephen's Basilica", lat: 47.5009, lng: 19.0540 },
             { name: "Fisherman's Bastion", lat: 47.5022, lng: 19.0348 },
         ]
+    }
+
+    const hotels = {
+        Amsterdam: {name:"Hotel TwentySeven",lat:52.3725,lng:4.8933},
+        Barcelona: {name:"Hotel Colonial Barcelona",lat:41.3823,lng:2.1807},
+        Budapest:{name:"Buda Castle Fashion Hotel",lat:47.5019,lng:19.0311}
     }
 
 
@@ -77,7 +87,7 @@ export default function SelectDestination() {
 
             </div>
             <Link to="/MapRoute">
-                <Button style={{ marginTop: "20px" }} variant="contained" color="primary">
+                <Button onClick={handleSaveDestinations} style={{ marginTop: "20px" }} variant="contained" color="primary">
                     Next
                         </Button>
             </Link>

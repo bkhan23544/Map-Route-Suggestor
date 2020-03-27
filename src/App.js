@@ -8,6 +8,8 @@ import BackgroundSlider from 'react-background-slider'
 import SelectCity from './Components/Select City'
 import SelectDestination from './Components/Select Destination'
 import MapRoute from './Components/Map Route'
+import SavedRoutes from './Components/Saved Routes'
+import SavedRouteMap from './Components/Saved Route Map'
 
 function App() {
 
@@ -25,6 +27,8 @@ const images=["https://wallpaperaccess.com/full/1088031.jpg","https://wallpaperc
        <Route exact path="/" component={SelectCity}/>
        <Route exact path="/SelectDestination" component={SelectDestination}/>
        <Route exact path="/MapRoute" component={MapRoute}/>
+       <Route exact path="/SavedRoutes" component={SavedRoutes}/>
+       <Route exact path="/SavedRouteMap" component={SavedRouteMap}/>
      </Router>
      </Provider>
     </div>

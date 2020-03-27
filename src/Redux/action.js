@@ -13,6 +13,20 @@ const setDestination = (data)=>{
     }
 }
 
+const setTime = (data)=>{
+    return{
+        type:'SETTIME',
+        data:data
+    }
+}
+
+const setCurrentRoute = (data)=>{
+    return{
+        type:'SETCURRENTROUTE',
+        data:data
+    }
+}
 
 
-export {setCity,setDestination}
+
+export {setCity,setDestination,setTime,setCurrentRoute}

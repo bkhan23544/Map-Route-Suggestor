@@ -6,7 +6,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import {setCity} from '../Redux/action'
+import {setCity,setTime} from '../Redux/action'
 import {useDispatch } from 'react-redux'
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
@@ -56,6 +56,11 @@ export default function SeleceCity() {
     const handleChange = event => {
         setCities(event.target.value);
         dispatch(setCity(event.target.value))
+    };
+
+    const saveTime =() => {
+       var time = (endTime-startTime)/1000
+       dispatch(setTime(time))
     };
 
 
@@ -113,10 +118,13 @@ export default function SeleceCity() {
 
                 <div>
                     <Link to="SelectDestination">
-                        <Button variant="contained" color="primary">
+                        <Button onClick={saveTime} variant="contained" color="primary">
                             Next
                         </Button>
-                    </Link></div>
+                    </Link>
+                    <h3 style={{color:"white"}}>OR</h3>
+                    <Link to="SavedRoutes"><Button variant="contained" color="primary">Go To Saved Routes</Button></Link>
+                    </div>
 
             </div>
         </div>

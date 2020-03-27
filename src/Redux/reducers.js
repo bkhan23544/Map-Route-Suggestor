@@ -19,9 +19,29 @@ const setDestination=(state=[],action)=>{
     }
 }
 
+const setTime=(state=null,action)=>{
+    switch(action.type){
+        case 'SETTIME':
+            return action.data
+        default:
+            return state    
+    }
+}
+
+const setCurrentRoute=(state=null,action)=>{
+    switch(action.type){
+        case 'SETCURRENTROUTE':
+            return action.data
+        default:
+            return state    
+    }
+}
+
 const rootReducer=combineReducers({
     setCity:setCity,
-    setDestination:setDestination
+    setDestination:setDestination,
+    setTime:setTime,
+    setCurrentRoute:setCurrentRoute
    
 })
 

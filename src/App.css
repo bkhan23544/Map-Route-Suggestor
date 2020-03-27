@@ -48,6 +48,75 @@ margin:auto
   text-align: left;
 }
 
+.saved-route{
+  background-color: white;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width:300px;
+  border-radius: 10px;
+  text-align: left;
+  margin: 20px;
+}
+
+.route-name{
+color: #4285F4;
+margin-top: 10px;
+margin-bottom: 10px;
+margin-left: 10px;
+}
+
+.route-image{
+  border-radius: 10px;
+}
+
+.route-container{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin-left: 150px;
+}
+
+
+
+
+.route-div{
+  background-color: white;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  margin:auto;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.route-list{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: row;
+}
+
 .checkbox{
   margin-left: 30px
+}
+
+.time{
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.name{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.arrow{
+  font-size: 20px;
+  font-weight: 500;
+  color: green;
 }
