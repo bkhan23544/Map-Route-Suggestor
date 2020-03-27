@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router ,Route} from 'react-router-dom'
@@ -12,10 +12,11 @@ import SavedRoutes from './Components/Saved Routes'
 import SavedRouteMap from './Components/Saved Route Map'
 
 function App() {
-
+//Background Images
 const images=["https://wallpaperaccess.com/full/1088031.jpg","https://wallpapercave.com/wp/wp1825719.jpg","https://wallpaperaccess.com/full/1298385.jpg"]
 
 
+//Router and Redux setup
   return (
     <div className="App">
        <Provider store={store}>

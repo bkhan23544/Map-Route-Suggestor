@@ -20,7 +20,7 @@ export default function SelectDestination() {
 
 
     const [selected, setSelected] = React.useState([])
-
+//Creates an array of locations selected with their latitude and longitude
     const handleChange = (event, v) => {
         setState({ ...state, [event.target.name]: event.target.checked });
         var select = selected
@@ -32,7 +32,7 @@ export default function SelectDestination() {
             setSelected(select.filter(item => item.name !== v.name))
         }
     };
-
+//Saves destinations in Redux
     const handleSaveDestinations=()=>{
         var destination = selected
         destination.unshift(hotels[city])
@@ -40,7 +40,7 @@ export default function SelectDestination() {
     }
 
     console.log(selected, "selected")
-
+//Cities with their destinations and lat lng
     const city = useSelector(state => state.setCity)
     const destinations = {
         Amsterdam: [

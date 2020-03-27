@@ -7,19 +7,14 @@ import {Link} from 'react-router-dom'
 
 export default function SavedRoutes(){
 
+    
 const dispatch = useDispatch();
 const [data,setData] = React.useState([])
 const [isLoading,setIsLoading] = React.useState(true)
 
-
-console.log(data,"data")
-console.log(isLoading,"ss")
-
+//Get Data from firebase and save into state
 useEffect(()=>{
-
-   
 firebase.database().ref("Routes").on("child_added",(snap)=>{
-console.log(snap.val())
 var state = data
 state.push(snap.val())
 setData(state)
@@ -28,14 +23,9 @@ setTimeout(() => {
 }, 1000);
 
 })
-
-
-
-
 },[data])
 
 const handleSaveCurrent=(v)=>{
-    console.log(v.route,"vvv")
     dispatch(setCurrentRoute(v.route))
 }
 

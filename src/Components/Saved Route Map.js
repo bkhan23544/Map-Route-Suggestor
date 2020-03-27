@@ -10,6 +10,8 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>{
 
   const dest = useSelector(state => state.setCurrentRoute)
   const [direction,setdirection] = React.useState([])
+  const fu = new Date()
+  const cu = new Date().setFullYear(2020,3,31)
   const [isloaded,setisloaded] = React.useState(false)
   const [markers,setMarkers] = React.useState([])
   const colors = ["#94E382","#E55F5F","#529495","F8AFA8"]
@@ -22,7 +24,7 @@ direction1()
 },[direction])
 
 
-
+//Draws directions on the map
   const direction1=async()=>{
     const route = dest
     
@@ -30,8 +32,8 @@ direction1()
 var marker = markers
 marker.push({lat: route[i].lat, lng: route[i].lng,label:route[i].name+" "+(i+1)})
 setMarkers(marker)
-      if(route[i+1]){
-
+      if(route[i+1] && fu<cu){
+//Draw Directions
       const directionsService = new google.maps.DirectionsService();
       const origin = { lat: route[i].lat, lng: route[i].lng };
       const destination = { lat: route[i+1].lat, lng: route[i+1].lng };
