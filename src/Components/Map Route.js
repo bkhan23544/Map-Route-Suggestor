@@ -16,7 +16,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
   const [direction, setdirection] = React.useState([])
   const [isloaded, setisloaded] = React.useState(false)
   const fu = new Date()
-  const cu = new Date().setFullYear(2020,3,31)
+  const cu = new Date().setFullYear(2020,4,01)
   const [markers, setMarkers] = React.useState([])
   const [exceed, setExceed] = React.useState(false)
   const [routeTime, setRouteTime] = React.useState(0)
@@ -105,7 +105,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
 
   //Save Route To Firebase Database
   const handleSaveRoute = (v) => {
-    firebase.database().ref("Routes/").push({
+    firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/Routes`).push({
       route: v
     })
     alert("This Route Has Been Saved")
@@ -115,7 +115,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
     var toSave = [{ name: v.originName, lat: v.originLat, lng: v.originLng },
     { name: v.destName, lat: v.destLat, lng: v.destLng }]
 
-    firebase.database().ref("Routes/").push({
+    firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/Routes`).push({
       route: toSave
     })
     alert("This Route Has Been Saved")

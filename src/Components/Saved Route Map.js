@@ -16,7 +16,6 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>{
   const [markers,setMarkers] = React.useState([])
   const colors = ["#94E382","#E55F5F","#529495","F8AFA8"]
 
-  console.log(dest,"dests")
 
 
   useEffect(()=>{

@@ -39,7 +39,6 @@ export default function SelectDestination() {
         dispatch(setDestination(destination))
     }
 
-    console.log(selected, "selected")
 //Cities with their destinations and lat lng
     const city = useSelector(state => state.setCity)
     const destinations = {

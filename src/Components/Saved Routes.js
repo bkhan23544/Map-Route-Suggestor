@@ -14,7 +14,7 @@ const [isLoading,setIsLoading] = React.useState(true)
 
 //Get Data from firebase and save into state
 useEffect(()=>{
-firebase.database().ref("Routes").on("child_added",(snap)=>{
+firebase.database().ref(`Users/${firebase.auth().currentUser.uid}/Routes`).on("child_added",(snap)=>{
 var state = data
 state.push(snap.val())
 setData(state)
