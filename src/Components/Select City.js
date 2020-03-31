@@ -8,7 +8,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import {setCity,setTime} from '../Redux/action'
 import {useDispatch } from 'react-redux'
-import {fs,cs} from '../Config/Config'
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 import {
@@ -69,7 +68,7 @@ export default function SeleceCity() {
     return (
         <div>
             <div>
-{fs<cs && 
+
                 <FormControl variant="outlined" className={classes.formControl}>
                     <InputLabel id="demo-simple-select-outlined-label">City</InputLabel>
                     <Select
@@ -88,7 +87,7 @@ export default function SeleceCity() {
 
                     </Select>
                 </FormControl>
-}
+
 
 
                 <div>

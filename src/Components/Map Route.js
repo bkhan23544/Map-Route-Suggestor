@@ -15,8 +15,6 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
   const time = useSelector(state => state.setTime)
   const [direction, setdirection] = React.useState([])
   const [isloaded, setisloaded] = React.useState(false)
-  const fu = new Date()
-  const cu = new Date().setFullYear(2020,4,01)
   const [markers, setMarkers] = React.useState([])
   const [exceed, setExceed] = React.useState(false)
   const [routeTime, setRouteTime] = React.useState(0)
@@ -43,7 +41,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) => {
       setMarkers(marker)
 
       //Calculate time
-      if (route[i + 1] && fu<cu) {
+      if (route[i + 1]) {
         var finalApiURL = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${route[i].lat},${route[i].lng}&destinations=${route[i + 1].lat}%2C${route[i + 1].lng}&key=${API_KEY}`
         let response = await fetch(finalApiURL);
         response.json().then((data) => {
